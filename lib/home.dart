@@ -463,207 +463,209 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 0, 48, 144),
           title: const Text('Anime Schedule')),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 24, top: 20),
-              child: Text(
-                'Anime Schedule in : ',
-                style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 25, top: 10),
-              child: SizedBox(
-                width: 340,
-                height: 30,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          index = 0;
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue,
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Monday",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          index = 1;
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue,
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Tuesday",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          index = 2;
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue,
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Wednesday",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          index = 3;
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue,
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Thursday",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          index = 4;
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue,
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Friday",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          index = 5;
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue,
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Saturday",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          index = 6;
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blue,
-                        ),
-                        child: const Center(
-                          child: Text(
-                            "Sunday",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                  ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 24, top: 20),
+                child: Text(
+                  'Anime Schedule in : ',
+                  style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
                 ),
               ),
-            ),
-            widgets[index],
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 25, top: 10),
+                child: SizedBox(
+                  width: 340,
+                  height: 30,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            index = 0;
+                          });
+                        },
+                        child: Container(
+                          width: 90,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Monday",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            index = 1;
+                          });
+                        },
+                        child: Container(
+                          width: 90,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Tuesday",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            index = 2;
+                          });
+                        },
+                        child: Container(
+                          width: 90,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Wednesday",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            index = 3;
+                          });
+                        },
+                        child: Container(
+                          width: 90,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Thursday",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            index = 4;
+                          });
+                        },
+                        child: Container(
+                          width: 90,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Friday",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            index = 5;
+                          });
+                        },
+                        child: Container(
+                          width: 90,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Saturday",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            index = 6;
+                          });
+                        },
+                        child: Container(
+                          width: 90,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blue,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Sunday",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                    ],
+                  ),
+                ),
+              ),
+              widgets[index],
+            ],
+          ),
         ),
       ),
     );

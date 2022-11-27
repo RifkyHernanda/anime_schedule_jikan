@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-//import 'package:tugas_besar/detailHistory.dart';
+import 'package:tugas_besar/detailHistory.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
@@ -39,48 +39,62 @@ class _HistoryPageState extends State<HistoryPage> {
         child: Column(
           children: [
             GestureDetector(
-              onTap: () {},
-              child: Container(
-                width: 300,
-                height: 400,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black87),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: Container(
-                        width: 200,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: NetworkImage(gambar),
-                            fit: BoxFit.cover,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailHistory(
+                            name: nama,
+                            description: deskripsi,
+                            image: gambar,
+                          )),
+                );
+              },
+              child: Center(
+                child: Container(
+                  width: 300,
+                  height: 400,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.black87),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30),
+                        child: Center(
+                          child: Container(
+                            width: 200,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: NetworkImage(gambar),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 50),
-                    Text(
-                      nama,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: Colors.white,
+                      const SizedBox(height: 50),
+                      Text(
+                        nama,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      favorit,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        color: Colors.white,
+                      SizedBox(height: 15),
+                      Text(
+                        favorit,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -92,10 +106,8 @@ class _HistoryPageState extends State<HistoryPage> {
                 var data = json.decode(myresponse.body);
                 if (myresponse.statusCode == 200) {
                   setState(() {
-                    nama =
-                        "Name Character : ${data['data']['name'].toString()}";
-                    favorit =
-                        "Favorites : ${data['data']['favorites'].toString()}";
+                    nama = "Name Character: ${data['data']['name'].toString()}";
+                    favorit = "Rating: ${data['data']['favorites'].toString()}";
                     gambar =
                         data['data']['images']['jpg']['image_url'].toString();
                     deskripsi = data['data']['about'].toString();
